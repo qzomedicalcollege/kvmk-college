@@ -1673,6 +1673,10 @@ footer {
   .timeline-item { width: 100%; padding-left: 70px; padding-right: 20px; }
   .timeline-item::after { left: 22px; }
   .right-item { left: 0; }
+  .right-item::after { left: 22px; }
+  .about-features { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-title { font-size: 2.2rem; }
   .admissions-split { grid-template-columns: 1fr; }
   .contacts-grid { grid-template-columns: 1fr; }
   .admin-layout {
@@ -1717,6 +1721,8 @@ footer {
   .news-grid { grid-template-columns: 1fr; }
   .specs-grid { grid-template-columns: 1fr; }
   .admin-stats-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 1.8rem; }
+  .container { padding: 0 16px; }
 }
 
 /* --- ADMIN FORM MULTILINGUAL TABS --- */
