@@ -118,6 +118,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
 ul {
@@ -148,7 +149,8 @@ button, input, textarea, select {
 .text-center { text-align: center; }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  line-height: 1.2;
   margin-bottom: 16px;
   position: relative;
   display: inline-block;
@@ -186,6 +188,8 @@ button, input, textarea, select {
   gap: 8px;
   transition: all var(--transition-speed) ease;
   font-family: var(--font-title);
+  min-height: 48px;
+  box-sizing: border-box;
 }
 
 .btn-primary {
@@ -413,7 +417,7 @@ body.dark-theme .theme-toggle-btn .fa-sun {
   display: flex;
   flex-direction: column;
   padding: 100px 30px 40px;
-  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-drawer.open {
@@ -477,7 +481,7 @@ body.dark-theme .theme-toggle-btn .fa-sun {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: clamp(2.2rem, 5vw + 1rem, 4rem);
   font-weight: 800;
   letter-spacing: -1.5px;
   color: var(--color-primary);
@@ -610,7 +614,7 @@ body.dark-theme .theme-toggle-btn .fa-sun {
 
 .stat-num {
   font-family: var(--font-title);
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
   font-weight: 800;
   color: var(--color-primary);
   line-height: 1;
@@ -1648,7 +1652,11 @@ footer {
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 1024px) {
-  .hero-title { font-size: 2.8rem; }
+  .hamburger { display: flex; }
+  .nav-links { display: none; }
+  header .lang-selector-container { display: none; }
+  header .smartnation-btn { display: none; }
+  .hero-title { font-size: clamp(2.2rem, 5vw + 1rem, 3rem); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-item { border-right: none; }
   .stat-item:nth-child(even) { border-right: none; }
@@ -1660,10 +1668,7 @@ footer {
 
 @media (max-width: 768px) {
   .section-padding { padding: 50px 0; }
-  .hamburger { display: flex; }
-  .nav-links { display: none; }
-  header .lang-selector-container { display: none; }
-  header .smartnation-btn { display: none; }
+  .btn { width: 100%; justify-content: center; }
   .hero-grid { grid-template-columns: 1fr; text-align: center; }
   .hero-desc { margin-left: auto; margin-right: auto; }
   .hero-buttons { justify-content: center; }
@@ -1723,8 +1728,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .section-title { font-size: 2rem; }
-  .hero-title { font-size: 1.8rem; }
   .container { padding: 0 16px; }
   .logo-text p { display: none; }
   .logo-img { width: 36px; height: 36px; }
